@@ -1,29 +1,30 @@
+# React Bitgesell HDWallet Integration JavaScript examples with JSBGL
 
-# React Bitgesell HDWallet Integration with JSBGL
+<img src="doc/img/Bitgesell.png" style="height: 60px;"/>
 
 ## Overview
 
-This repository contains a React example demonstrating the integration of a Bitgesell HDWallet using JSBGL. The example showcases how to manage Bitgesell addresses, generate new addresses, and handle transactions using the `jsbgl` library in a React application.
+This repository contains a React example demonstrating the integration of a Bitgesell HDWallet using JSBGL with JavaScript. The example showcases how to manage Bitgesell addresses, generate new addresses, and handle transactions using the `jsbgl` library in a React application.
 
 ## Getting Started
 
 ### Prerequisites
 
 - Node.js and npm installed
-- Bitgesell node or API endpoint
+- Setup the Nodejs example and run locally
 
 ### Installation
 
 1. Clone this repository:
 
-    ```bash
-    git clone https://github.com/naftalimurgor/bitgesell-hdwallet-react
-    ```
+```bash
+git clone https://github.com/naftalimurgor/bitgesell-javascript-examples
+```
 
 2. Change into the project directory:
 
 ```bash
-cd bitgesell-hdwallet-react
+cd bitgesell-javascript-examples
 ```
 
 3. Install dependencies:
