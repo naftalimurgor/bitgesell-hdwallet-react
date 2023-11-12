@@ -1,7 +1,26 @@
+import { useState } from 'react';
 import logo from './Icon.png';
 import './App.css';
+import { createWallet, downloadHDwalletBackup } from './utils';
 
 function App() {
+  const [hdWalletPhrase, setsetWalletPhrase] = useState(null)
+
+  const handleGenerateHDWallet = async (evt) => {
+    evt.preventDefault()
+
+    const wallet = createWallet()
+    setsetWalletPhrase(wallet)
+  }
+
+  const handleDownloadSeedphrase = (evt) => {
+    evt.preventDefault()
+
+    if (hdWalletPhrase !== null) {
+      downloadHDwalletBackup(hdWalletPhrase, `${Date.now()}`)
+    }
+  }
+
   return (
     <div className="App">
       <nav className="navbar bg-light">
@@ -73,7 +92,7 @@ function App() {
               <form action="">
                 <div className="mb-3">
                   <div className="mx-auto p2 mt-2 mb-4">
-                    <button className="btn btn-primary">Generate an HD Wallet Seed Phrase</button>
+                    <button className="btn btn-primary" onClick={handleGenerateHDWallet}>Generate an HD Wallet Seed Phrase</button>
                   </div>
                   <label htmlFor="exampleFormControlTextarea1" className="form-label">
                     Mnemonic phrase for Hierarchical Deterministic wallets:
@@ -83,10 +102,11 @@ function App() {
                     id="exampleFormControlTextarea1"
                     rows={3}
                     defaultValue={""}
+                    value={hdWalletPhrase}
                   />
                 </div>
                 <div className="mx-auto p2 mt-2 mb-4">
-                  <button className="btn btn-primary">Download Seedphrase</button>
+                  <button className="btn btn-primary" onClick={handleDownloadSeedphrase}>Download Seedphrase</button>
                 </div>
               </form>
             </div>
