@@ -53,9 +53,9 @@ npm start
 
 - **Address Generation:** Generate new Bitgesell addresses securely.
 
-- **Transaction Handling:** Send and receive Bitgesell transactions.
+- **Transaction Handling:** Send and receive Bitgesell transactions[wip].
 
-- **HDWallet Management:** Manage your HDWallet and derive new addresses.
+- **HDWallet Management:** Manage your HDWallet and derive new addresses[wip].
 
 ## Configuration
 
