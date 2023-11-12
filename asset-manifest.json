@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/bitgesell-javascript-examples/bitgesell-hdwallet-reactjs/static/css/main.7355fb6f.css",
+    "main.js": "/bitgesell-javascript-examples/bitgesell-hdwallet-reactjs/static/js/main.da2bc2cc.js",
+    "static/js/787.6ec738d0.chunk.js": "/bitgesell-javascript-examples/bitgesell-hdwallet-reactjs/static/js/787.6ec738d0.chunk.js",
+    "index.html": "/bitgesell-javascript-examples/bitgesell-hdwallet-reactjs/index.html",
+    "main.7355fb6f.css.map": "/bitgesell-javascript-examples/bitgesell-hdwallet-reactjs/static/css/main.7355fb6f.css.map",
+    "main.da2bc2cc.js.map": "/bitgesell-javascript-examples/bitgesell-hdwallet-reactjs/static/js/main.da2bc2cc.js.map",
+    "787.6ec738d0.chunk.js.map": "/bitgesell-javascript-examples/bitgesell-hdwallet-reactjs/static/js/787.6ec738d0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7355fb6f.css",
+    "static/js/main.da2bc2cc.js"
+  ]
+}
