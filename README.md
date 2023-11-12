@@ -1,6 +1,6 @@
 # React Bitgesell HDWallet Integration JavaScript examples with JSBGL
 
-<img src="doc/img/Icon.png" style="height: 60px;"/>
+<img src="Icon.png" style="height: 60px;"/>
 
 ## Overview
 
