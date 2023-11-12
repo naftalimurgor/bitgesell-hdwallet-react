@@ -1,0 +1,3 @@
+[submodule "bitgesell-node-js-example/jsbgl"]
+	path = bitgesell-node-js-example/jsbgl
+	url = https://github.com/naftalimurgor/jsbgl
