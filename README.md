@@ -6,6 +6,7 @@
 
 This repository contains a React example demonstrating the integration of a Bitgesell HDWallet using JSBGL with JavaScript. The example showcases how to manage Bitgesell addresses, generate new addresses, and handle transactions using the `jsbgl` library in a React application.
 
+![Alt text](./Screenshot_20231112_182036.png)
 ## Getting Started
 
 ### Prerequisites
