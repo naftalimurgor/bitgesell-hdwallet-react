@@ -56,6 +56,16 @@ async function importHDWalletFromMnemonic(mnemonic) {
     const wallet = await importHDWalletFromMnemonic(MNEMONIC)
     
     const { mnemonic } = wallet
+    // At index 0
+    const privkey0 = wallet.getAddress(0).publicKey
+    const pubkey0 = wallet.getAddress(0).publicKey
+    const address0 = wallet.getAddress(0).address
+
+
+    console.log(privkey0)
+    console.log(pubkey0)
+    console.log(address0)
+
     console.log('MNEMONIC/SEED_PHRASE', mnemonic === MNEMONIC);
     console.log(countMnemonicWords(mnemonic)) // 24 words
 })()
