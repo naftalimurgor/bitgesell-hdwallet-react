@@ -9,15 +9,15 @@ function App() {
   const handleGenerateHDWallet = async (evt) => {
     evt.preventDefault()
 
-    const wallet = createWallet()
-    setsetWalletPhrase(wallet)
+    // const wallet = createWallet()
+    // setsetWalletPhrase(wallet)
   }
 
   const handleDownloadSeedphrase = (evt) => {
     evt.preventDefault()
 
     if (hdWalletPhrase !== null) {
-      downloadHDwalletBackup(hdWalletPhrase, `${Date.now()}`)
+      // downloadHDwalletBackup(hdWalletPhrase, `${Date.now()}`)
     }
   }
 

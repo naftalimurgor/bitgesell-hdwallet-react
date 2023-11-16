@@ -1,16 +1,3 @@
-import '../jsbgl.min.js';
-
-export async function createWallet() {
-    try {
-        const wallet = new window.Wallet({
-            path_type: 'BIP84',
-            testnet: false,
-        });
-        return JSON.stringify(wallet)
-    } catch (error) {
-        throw new Error(`Failed ${error.message}`)
-    }
-}
 
 export const downloadHDwalletBackup = (data, filename) => {
     const blobData = new Blob([JSON.stringify(data)], { type: 'application/json' });
