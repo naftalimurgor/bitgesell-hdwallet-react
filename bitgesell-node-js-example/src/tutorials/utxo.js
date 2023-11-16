@@ -1,30 +1,29 @@
 const axios = require('axios');
 
-const bitgesellAddress = 'your_address';
-
-// Bitgesell API endpoint to get UTXOs for an address
-const apiEndpoint = `https://explorer.bitgesell.it/api/address/${bitgesellAddress}/utxo`;
-
 const axios = require('axios');
 
-const getBitgesellUtxo = async (bitgesellAddress) => {
-  try {
-    // Bitgesell API endpoint to get UTXOs for an address
-    const apiEndpoint = `https://explorer.bitgesell.it/api/address/${bitgesellAddress}/utxo`;
+// Bitgesell API endpoint to get UTXOs for an address
 
-    // Make an HTTP GET request to the Bitgesell API
-    const response = await axios.get(apiEndpoint);
+const BITGESELL_EXPLORER_API = 'https://api.bitaps.com/bgl/v1/blockchain'
 
-    // Handle the response data (UTXOs)
-    const utxos = response.data;
-    console.log('UTXOs:', utxos);
+// /address/utxo/{address}
 
-    return utxos;
-  } catch (error) {
-    // Handle errors
-    console.error('Error:', error.message);
-    throw error; // You can choose to handle or propagate the error as needed
-  }
+
+const getAddressUtxo = async (bitgesellAddress) => {
+    try {
+
+        const apiEndpoint = `${BITGESELL_EXPLORER_API}/address/utxo/${bitgesellAddress}`;
+        const response = await axios.get(apiEndpoint);
+        const { data: utxos } = response.data.data;
+        console.log('UTXOs:', utxos);
+        return utxos;
+    } catch (error) {
+        console.error('Error:', error.message);
+        throw error;
+    }
 };
 
-getBitgesellUtxo(bitgesellAddress);
+(async () => {
+    const address = await getAddressUtxo()
+    console.log(address)
+})()
