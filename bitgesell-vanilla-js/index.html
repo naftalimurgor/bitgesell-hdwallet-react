@@ -106,16 +106,16 @@
           <form action="">
             <div class="mb-3">
               <div class="mx-auto p-2 mt-2 mb-4">
-                <button class="btn btn-primary">Generate an HD
+                <button class="btn btn-primary" id="createHDWallet">Generate an HD
                   Wallet Seed Phrase</button>
               </div>
               <label class="form-label">
                 Mnemonic phrase for Hierarchical Deterministic wallets:
               </label>
-              <textarea class="form-control" id="mnemonicPhrase" rows="3"></textarea>
+              <textarea class="form-control" id="seedphraseText" rows="3"></textarea>
             </div>
             <div class="mx-auto p-2 mt-2 mb-4">
-              <button class="btn btn-primary">Download
+              <button class="btn btn-primary" id="download-btn">Download
                 Seedphrase</button>
             </div>
           </form>
@@ -150,10 +150,49 @@
       </div>
     </div>
   </div>
-  <script src="./jsbgl.web.min.js">
-    (() => {
-
+  <script src="./jsbgl.web.min.js"></script>
+  <script>
+    (async () => {
+      await jsbtc.asyncInit(window)
+      console.log(window)
+      console.log('here');
     })()
+
+    const $createHDWallet = document.getElementById('createHDWallet')
+    const $textArea = document.getElementById('seedphraseText')
+    let walletObj
+
+    $createHDWallet.addEventListener('click', (evt) => {
+      evt.preventDefault()
+      const wallet = createMnemonicBasedWallet()
+      walletObj = wallet
+      $textArea.value = wallet.mnemonic
+
+    })
+    // generate 
+    // write to the value of textfield
+    function createMnemonicBasedWallet() {
+      const wallet = new window.Wallet({ testnet: false })
+      return wallet
+    }
+
+    function downloadJsonFile(data, filename) {
+      const jsonBlob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+
+      const downloadLink = document.createElement('a');
+      downloadLink.href = URL.createObjectURL(jsonBlob);
+      downloadLink.download = filename || 'data.json';
+
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+
+      document.body.removeChild(downloadLink);
+    }
+    document.getElementById('download-btn').addEventListener('click', (evt) => {
+      evt.preventDefault()
+      downloadJsonFile(walletObj)
+    })
+
   </script>
 </body>
 
