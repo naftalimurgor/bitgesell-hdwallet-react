@@ -10,7 +10,7 @@ const sendBitgesellTransaction = async function(privateKey, toAddress, amount) {
     txb.sign(0, keyPair);
     const tx = txb.build();
     const rawTransaction = tx.toHex();
-    const apiEndpoint = 'https://api.bitgesell.it/transaction';
+    const apiEndpoint = 'https://api.bitaps.com/bgl/v1/blockchain';
     const response = await axios.post(apiEndpoint, { rawTransaction });
     const transactionResult = response.data;
     console.log('Transaction Result:', transactionResult);

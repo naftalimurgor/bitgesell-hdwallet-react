@@ -2,13 +2,13 @@ const axios = require('axios');
 
 const getBitgesellAddressBalance = async (bitgesellAddress) => {
   try {
-    const apiEndpoint = `https://explorer.bitgesell.it/api/address/${bitgesellAddress}/balance`;
+    const apiEndpoint = `https://api.bitaps.com/bgl/v1/blockchain/address/state/${bitgesellAddress}`;
 
     const response = await axios.get(apiEndpoint);
-    const balance = response.data;
+    const balanceData = response.data;
 
-    console.log('Balance for address', bitgesellAddress, ':', balance);
-    return balance;
+    console.log('Balance for address', bitgesellAddress, ':', balanceData.data.balance);
+    return balanceData;
   } catch (error) {
     console.error('Error:', error.message);
     throw error;
@@ -16,5 +16,5 @@ const getBitgesellAddressBalance = async (bitgesellAddress) => {
 };
 
 // Example usage
-const bitgesellAddress = 'your_bitgesell_address';
+const bitgesellAddress = 'bgl1qlmzckh904vze03n0lwzptt5dkmvf2vj3ev4qm9';
 getBitgesellAddressBalance(bitgesellAddress);
