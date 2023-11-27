@@ -1,23 +1,25 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import logo from './Icon.png';
 import './App.css';
-import { createWallet, downloadHDwalletBackup } from './utils';
+import { createHDWallet, downloadHDwalletBackup } from './utils';
+// import './jsbgl.web.min.js'
 
 function App() {
-  const [hdWalletPhrase, setsetWalletPhrase] = useState(null)
+  const [hdWalletPhrase, setsetWalletPhrase] = useState("")
 
-  const handleGenerateHDWallet = async (evt) => {
+  const handleGenerateHDWallet = (evt) => {
     evt.preventDefault()
 
-    // const wallet = createWallet()
-    // setsetWalletPhrase(wallet)
+    const wallet = createHDWallet()
+    console.log(wallet)
+    setsetWalletPhrase(wallet)
   }
 
   const handleDownloadSeedphrase = (evt) => {
     evt.preventDefault()
 
     if (hdWalletPhrase !== null) {
-      // downloadHDwalletBackup(hdWalletPhrase, `${Date.now()}`)
+      downloadHDwalletBackup(hdWalletPhrase, `${Date.now()}`)
     }
   }
 
